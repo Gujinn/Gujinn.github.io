@@ -1,0 +1,52 @@
+<h4 id="aproductionbuildetoptimisation">a. Production build et optimisation</h4>
+<ul>
+    <li>
+        <p><strong>Vue CLI</strong>: Vue CLI est l'outil officiel pour initialiser, développer et construire des
+            projets Vue. Avec une simple commande (<code>vue-cli-service build</code>), vous pouvez créer une
+            version optimisée de votre application pour la production.</p>
+    </li>
+    <li>
+        <p><strong>Optimisation du bundle</strong>: Vue CLI utilise Webpack sous le capot, qui divise votre code en
+            plusieurs morceaux (code splitting) pour améliorer les temps de chargement. Vous pouvez également
+            analyser la taille de votre bundle avec des outils comme <code>webpack-bundle-analyzer</code>.</p>
+    </li>
+    <li>
+        <p><strong>Lazy loading</strong>: Vue, combiné avec Webpack, permet le chargement paresseux des composants,
+            ce qui signifie que vous pouvez diviser votre application en morceaux plus petits qui sont chargés à la
+            demande.</p>
+    </li>
+</ul>
+<h4 id="bdploiementsurdiversesplateformes">b. Déploiement sur diverses plateformes</h4>
+<ul>
+    <li>
+        <p><strong>Serveurs statiques</strong>: Une fois que votre application est construite, elle peut être
+            déployée sur n'importe quel serveur de fichiers statique. Des options populaires incluent Netlify,
+            Vercel, et GitHub Pages.</p>
+    </li>
+    <li>
+        <p><strong>Serveurs traditionnels</strong>: Vous pouvez également déployer votre application Vue sur des
+            serveurs traditionnels comme Apache ou Nginx. Assurez-vous de bien configurer le serveur pour gérer le
+            routage côté client.</p>
+    </li>
+    <li>
+        <p><strong>Conteneurs</strong>: Vous pouvez dockeriser votre application Vue et la déployer à l'aide de
+            conteneurs, ce qui facilite le déploiement dans des environnements comme Kubernetes.</p>
+    </li>
+</ul>
+<h4 id="cintgrationcontinueetdploiementcicd">c. Intégration continue et déploiement (CI/CD)</h4>
+<ul>
+    <li>
+        <p><strong>Outils CI/CD</strong>: Il existe de nombreux outils CI/CD tels que Jenkins, GitLab CI, GitHub
+            Actions, et Travis CI qui peuvent être configurés pour construire, tester et déployer automatiquement
+            votre application Vue à chaque changement de code.</p>
+    </li>
+    <li>
+        <p><strong>Tests automatisés</strong>: Avant le déploiement, vous pouvez configurer votre pipeline CI/CD
+            pour exécuter des tests unitaires et des tests E2E pour garantir que tout fonctionne comme prévu.</p>
+    </li>
+    <li>
+        <p><strong>Déploiements automatisés</strong>: Une fois les tests réussis, les outils CI/CD peuvent
+            automatiquement déployer la nouvelle version de votre application sur l'environnement cible,
+            garantissant ainsi des mises à jour fluides et fiables.</p>
+    </li>
+</ul>

@@ -1,0 +1,51 @@
+<h4 id="aconfigurationduvuerouter">a. Configuration du Vue Router</h4>
+<ul>
+  <li>Pour commencer, il faut installer le Vue Router via npm ou yarn.</li>
+</ul>
+<pre><code class="bash language-bash">  npm install vue-router@next
+</code></pre>
+<h4 id="bdfinitiondesroutes">b. Définition des routes</h4>
+<ul>
+  <li>Les routes sont définies en associant un chemin à un composant.</li>
+</ul>
+<p><strong>Exemple</strong>:</p>
+<pre><code class="javascript language-javascript">import { createRouter, createWebHistory } from 'vue-router';
+import HomeComponent from './components/HomeComponent.vue';
+import AboutComponent from './components/AboutComponent.vue';
+
+const routes = [
+  { path: '/', component: HomeComponent },
+  { path: '/about', component: AboutComponent }
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes
+});
+</code></pre>
+<h4 id="cajoutdurouterviewetdurouterlink">c. Ajout du router-view et du router-link</h4>
+<ul>
+  <li>Le composant <code>&lt;router-view&gt;</code> est l'endroit où le composant actuel de la route sera rendu.</li>
+  <li>Le composant <code>&lt;router-link&gt;</code> est utilisé pour naviguer entre les pages.</li>
+</ul>
+<p><strong>Exemple</strong>:</p>
+<pre><code class="html language-html">&lt;router-link to="/"&gt;Home&lt;/router-link&gt;
+&lt;router-link to="/about"&gt;About&lt;/router-link&gt;
+
+&lt;router-view&gt;&lt;/router-view&gt;
+</code></pre>
+<h4 id="dnavigationguardsetchargementparesseux">d. Navigation guards et chargement paresseux</h4>
+<ul>
+  <li>Les guards de navigation permettent de définir des comportements spécifiques lors de la navigation entre les
+    routes, par exemple pour vérifier si un utilisateur est authentifié.</li>
+  <li>Le chargement paresseux permet de charger les composants à la demande, ce qui peut améliorer les performances de
+    l'application.</li>
+</ul>
+<p><strong>Exemple de chargement paresseux</strong>:</p>
+<pre><code class="javascript language-javascript">const AboutComponent = () =&gt; import('./components/AboutComponent.vue');
+
+const routes = [
+  { path: '/', component: HomeComponent },
+  { path: '/about', component: AboutComponent }
+];
+</code></pre>
