@@ -11,43 +11,45 @@
 <body>
     <div class="index-container">
         <nav>
-            <ul>
-                <li><a href="#/summary">Summary</a></li>
-                <li><a href="#/">Introduction</a></li>
-                <li>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#/summary" class="nav-link">Summary</a></li>
+                <li class="nav-item"><a href="#/" class="nav-link">Introduction</a></li>
+                <li class="nav-item">
                     Basics
-                    <ul>
-                        <li><a href="#/basics">Overview</a></li>
-                        <li><a href="#/basics/binders">Binders</a></li>
-                        <li><a href="#/basics/computed">Computed</a></li>
-                        <li><a href="#/basics/life-cycle">Life Cycle</a></li>
-                        <li><a href="#/basics/methods">Methods</a></li>
-                        <li><a href="#/basics/watchers">Watchers</a></li>
+                    <ul class="submenu">
+                        <li class="nav-item"><a href="#/basics" class="nav-link">Overview</a></li>
+                        <li class="nav-item"><a href="#/basics/binders" class="nav-link">Binders</a></li>
+                        <li class="nav-item"><a href="#/basics/computed" class="nav-link">Computed</a></li>
+                        <li class="nav-item"><a href="#/basics/life-cycle" class="nav-link">Life Cycle</a></li>
+                        <li class="nav-item"><a href="#/basics/methods" class="nav-link">Methods</a></li>
+                        <li class="nav-item"><a href="#/basics/watchers" class="nav-link">Watchers</a></li>
                     </ul>
                 </li>
-                <li><a href="#/components">Components</a></li>
-                <li><a href="#/directives">Directives</a></li>
-                <li><a href="#/composition-api">Composition API</a></li>
-                <li><a href="#/router">Router</a></li>
-                <li>
+                <li class="nav-item"><a href="#/components" class="nav-link">Components</a></li>
+                <li class="nav-item"><a href="#/directives" class="nav-link">Directives</a></li>
+                <li class="nav-item"><a href="#/composition-api" class="nav-link">Composition API</a></li>
+                <li class="nav-item"><a href="#/router" class="nav-link">Router</a></li>
+                <li class="nav-item">
                     Store
-                    <ul>
-                        <li><a href="#/store">Overview</a></li>
-                        <li><a href="#/store/vuex">Vuex</a></li>
-                        <li><a href="#/store/pinia">Pinia</a></li>
+                    <ul class="submenu">
+                        <li class="nav-item"><a href="#/store" class="nav-link">Overview</a></li>
+                        <li class="nav-item"><a href="#/store/vuex" class="nav-link">Vuex</a></li>
+                        <li class="nav-item"><a href="#/store/pinia" class="nav-link">Pinia</a></li>
                     </ul>
                 </li>
-                <li><a href="#/advanced">Advanced</a></li>
-                <li><a href="#/tests">Testing</a></li>
-                <li><a href="#/best-practices">Best Practices</a></li>
-                <li><a href="#/deployment">Deployment</a></li>
-                <li><a href="#/resources">Resources</a></li>
-                <li><a href="#/vite">Vite</a></li>
+                <li class="nav-item"><a href="#/advanced" class="nav-link">Advanced</a></li>
+                <li class="nav-item"><a href="#/tests" class="nav-link">Testing</a></li>
+                <li class="nav-item"><a href="#/best-practices" class="nav-link">Best Practices</a></li>
+                <li class="nav-item"><a href="#/deployment" class="nav-link">Deployment</a></li>
+                <li class="nav-item"><a href="#/resources" class="nav-link">Resources</a></li>
+                <li class="nav-item"><a href="#/vite" class="nav-link">Vite</a></li>
             </ul>
         </nav>
+
         <div id="content"></div>
     </div>
     <script src="router.js"></script>
+    <script src="active_tab.js"></script>
 </body>
 
 </html>
