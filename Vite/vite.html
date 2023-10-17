@@ -1,0 +1,67 @@
+<p>Outil de construction qui vise à fournir un environnement de développement plus rapide et plus efficace pour les
+    applications front-end modernes. Il a été créé par Evan You, le créateur de Vue.js. Voici un aperçu de Vite et de
+    ses caractéristiques principales :</p>
+<h4 id="apourquoivite">a. Pourquoi Vite ?</h4>
+<ul>
+    <li>
+        <p><strong>Démarrage instantané</strong> : Contrairement aux bundlers traditionnels qui transforment et
+            regroupent tout le code avant de démarrer un serveur de développement, Vite sert le code via des
+            importations ES natifs, ce qui permet un démarrage quasi instantané, quelle que soit la taille de votre
+            application.</p>
+    </li>
+    <li>
+        <p><strong>Mises à jour rapides</strong> : Lorsque vous modifiez un fichier, Vite ne reconstruit que ce fichier
+            et les fichiers qui en dépendent, ce qui rend le rechargement à chaud (HMR) extrêmement rapide.</p>
+    </li>
+    <li>
+        <p><strong>Optimisation pour la production</strong> : Pour la production, Vite utilise Rollup pour regrouper
+            votre code, bénéficiant ainsi de l'efficacité de Rollup pour les builds de petite taille et optimisées.</p>
+    </li>
+</ul>
+<h4 id="bcaractristiquesprincipales">b. Caractéristiques principales</h4>
+<ul>
+    <li>
+        <p><strong>Prise en charge des importations ES natifs</strong> : Vite utilise les modules ES natifs (ESM) pour
+            le développement, permettant des fonctionnalités telles que le treeshaking pendant le développement.</p>
+    </li>
+    <li>
+        <p><strong>Prise en charge intégrée de Vue</strong> : Bien que Vite puisse être utilisé avec n'importe quel
+            framework front-end, il offre une prise en charge intégrée de Vue, ce qui le rend particulièrement attrayant
+            pour les développeurs Vue.</p>
+    </li>
+    <li>
+        <p><strong>Extensible via des plugins</strong> : Vite est hautement extensible et dispose d'une API de plugin
+            qui permet d'ajouter des fonctionnalités supplémentaires selon les besoins.</p>
+    </li>
+</ul>
+<h4 id="ccommentdmarreravecvite">c. Comment démarrer avec Vite</h4>
+<ol>
+    <li><strong>Installation</strong> :</li>
+</ol>
+<pre><code class="bash language-bash">   npm init vite@latest
+</code></pre>
+<ol start="2">
+    <li>
+        <p><strong>Sélection du modèle</strong> : Lors de l'initialisation, Vite vous demandera de choisir un modèle.
+            Vous pouvez choisir Vue, React, Preact, etc.</p>
+    </li>
+    <li>
+        <p><strong>Développement</strong> :</p>
+    </li>
+</ol>
+<pre><code class="bash language-bash">   npm run dev
+</code></pre>
+<ol start="4">
+    <li><strong>Construction pour la production</strong> :</li>
+</ol>
+<pre><code class="bash language-bash">   npm run build
+</code></pre>
+<h4 id="dintgrationavecvue3">d. Intégration avec Vue3</h4>
+<p>Vite fonctionne particulièrement bien avec Vue3, offrant un environnement de développement rapide avec une
+    intégration étroite. Les projets initiés avec le modèle Vue de Vite bénéficient automatiquement des avantages de
+    Vue3 et de l'écosystème Vue.</p>
+<h4 id="ecosystmeetplugins">e. Écosystème et plugins</h4>
+<p>La communauté a rapidement adopté Vite, et il existe déjà de nombreux plugins pour étendre ses fonctionnalités, qu'il
+    s'agisse de la prise en charge de TypeScript, de l'importation d'images, ou de l'intégration avec d'autres
+    bibliothèques et frameworks.
+</p>

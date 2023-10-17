@@ -1,0 +1,64 @@
+<p>Le cycle de vie d'une instance Vue est une série d'étapes par lesquelles elle passe depuis sa création jusqu'à sa
+    destruction. À chaque étape du cycle de vie, Vue fournit des "hooks" qui vous permettent d'exécuter du code à
+    des
+    moments spécifiques.</p>
+<p>Voici un aperçu des hooks de cycle de vie de Vue3 et des actions couramment effectuées à chaque étape:</p>
+<h4 id="1beforecreate">1. <code>beforeCreate</code></h4>
+<ul>
+    <li><strong>Quand</strong>: Juste avant que l'initialisation de l'instance Vue ne commence.</li>
+    <li><strong>Utilisation courante</strong>: Rarement utilisé car les propriétés réactives (comme
+        <code>data</code> ou
+        <code>methods</code>) ne sont pas encore définies.
+    </li>
+</ul>
+<h4 id="2created">2. <code>created</code></h4>
+<ul>
+    <li><strong>Quand</strong>: Après la création de l'instance Vue, lorsque les propriétés réactives sont
+        configurées.
+    </li>
+    <li><strong>Utilisation courante</strong>: Pour exécuter du code juste après que l'instance ait été initialisée.
+        Par
+        exemple, pour récupérer des données depuis une API.</li>
+</ul>
+<h4 id="3beforemount">3. <code>beforeMount</code></h4>
+<ul>
+    <li><strong>Quand</strong>: Juste avant que l'instance Vue ne soit montée sur le DOM.</li>
+    <li><strong>Utilisation courante</strong>: Rarement utilisé, car il est généralement préférable d'éviter de
+        manipuler le DOM directement avec Vue.</li>
+</ul>
+<h4 id="4mounted">4. <code>mounted</code></h4>
+<ul>
+    <li><strong>Quand</strong>: Après que l'instance Vue ait été montée sur le DOM.</li>
+    <li><strong>Utilisation courante</strong>: Pour exécuter du code qui nécessite que le composant soit monté dans
+        le
+        DOM, comme l'utilisation de bibliothèques qui nécessitent un élément DOM.</li>
+</ul>
+<h4 id="5beforeupdate">5. <code>beforeUpdate</code></h4>
+<ul>
+    <li><strong>Quand</strong>: Juste avant que les modifications apportées aux données ne soient reflétées dans le
+        DOM.
+    </li>
+    <li><strong>Utilisation courante</strong>: Pour exécuter du code avant que les modifications ne soient
+        appliquées,
+        par exemple pour sauvegarder l'état avant une mise à jour.</li>
+</ul>
+<h4 id="6updated">6. <code>updated</code></h4>
+<ul>
+    <li><strong>Quand</strong>: Après que les modifications apportées aux données aient été reflétées dans le DOM.
+    </li>
+    <li><strong>Utilisation courante</strong>: Pour exécuter du code après une mise à jour du DOM, comme
+        l'interaction
+        avec une bibliothèque qui a besoin d'être informée des changements du DOM.</li>
+</ul>
+<h4 id="7beforeunmount">7. <code>beforeUnmount</code></h4>
+<ul>
+    <li><strong>Quand</strong>: Juste avant que l'instance Vue ne soit détruite et retirée du DOM.</li>
+    <li><strong>Utilisation courante</strong>: Pour nettoyer les écouteurs d'événements, les timers ou d'autres
+        ressources avant que le composant ne soit détruit.</li>
+</ul>
+<h4 id="8unmounted">8. <code>unmounted</code></h4>
+<ul>
+    <li><strong>Quand</strong>: Après que l'instance Vue ait été détruite et retirée du DOM.</li>
+    <li><strong>Utilisation courante</strong>: Pour exécuter du code après que le composant ait été complètement
+        détruit, bien que ce soit rarement nécessaire.</li>
+</ul>

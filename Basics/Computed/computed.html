@@ -1,0 +1,26 @@
+<p>Les <strong>propriétés calculées</strong> sont des fonctions qui retournent une valeur. Elles sont définies dans
+  l'option <code>computed</code>. La principale différence avec les méthodes est que les propriétés calculées sont
+  mises en cache. Si leurs dépendances ne changent pas, elles ne sont pas recalculées.</p>
+<p><strong>Exemple</strong>:</p>
+<pre><code class="javascript language-javascript">computed: {
+  fullName: function() {
+    return this.firstName + ' ' + this.lastName;
+  }
+}
+</code></pre>
+<p><strong>Quand les utiliser</strong>:</p>
+<ul>
+  <li>
+    <p>Pour des valeurs dérivées des données qui nécessitent un calcul.</p>
+  </li>
+  <li>
+    <p>Lorsque vous voulez éviter des recalculs inutiles (grâce à la mise en cache).</p>
+  </li>
+  <li>
+    <p>Lorsque vous avez besoin d'une valeur qui dépend de plusieurs propriétés réactives.</p>
+  </li>
+  <li>
+    <p><strong>Propriétés calculées</strong>: Utilisez-les pour des valeurs dérivées qui nécessitent un calcul et qui
+      doivent être mises en cache.</p>
+  </li>
+</ul>

@@ -1,0 +1,29 @@
+<p>Les <strong>méthodes</strong> sont des fonctions définies dans l'option <code>methods</code> d'une instance Vue.
+  Elles sont utilisées pour:</p>
+<ul>
+  <li>Réagir à des événements, comme des clics de bouton.</li>
+  <li>Réaliser des calculs basés sur les données de l'instance.</li>
+  <li>Manipuler les données.</li>
+</ul>
+<p><strong>Exemple</strong>:</p>
+<pre><code class="javascript language-javascript">methods: {
+  sayHello: function() {
+    alert('Hello!');
+  },
+  incrementCount: function() {
+    this.count += 1;
+  }
+}
+</code></pre>
+<p><strong>Quand les utiliser</strong>:</p>
+<ul>
+  <li>
+    <p>Pour des actions déclenchées par des événements.</p>
+  </li>
+  <li>
+    <p>Pour des opérations qui ne nécessitent pas de mise en cache (contrairement aux propriétés calculées).</p>
+  </li>
+  <li>
+    <p><strong>Méthodes</strong>: Utilisez-les pour des actions et des calculs simples.</p>
+  </li>
+</ul>

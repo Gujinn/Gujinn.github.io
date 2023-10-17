@@ -1,0 +1,99 @@
+<p>Pinia est une alternative à Vuex pour la gestion d'état dans les applications Vue. Conçu spécifiquement pour Vue 3 et
+  la Composition API, Pinia offre une expérience améliorée pour gérer l'état global de l'application. Voici un aperçu de
+  Pinia et de ses caractéristiques principales :</p>
+<h4 id="apourquoipinia">a. Pourquoi Pinia ?</h4>
+<ul>
+  <li>
+    <p><strong>Conçu pour Vue 3</strong> : Alors que Vuex peut être utilisé avec Vue 3, Pinia a été conçu dès le départ
+      pour tirer pleinement parti des nouvelles fonctionnalités de Vue 3, en particulier la Composition API.</p>
+  </li>
+  <li>
+    <p><strong>API simplifiée</strong> : Pinia offre une API plus simple et plus intuitive que Vuex, rendant la gestion
+      de l'état plus accessible, en particulier pour les nouveaux venus.</p>
+  </li>
+  <li>
+    <p><strong>Typage amélioré</strong> : Pour les utilisateurs de TypeScript, Pinia offre une meilleure intégration et
+      un typage plus solide par rapport à Vuex.</p>
+  </li>
+</ul>
+<h4 id="bconceptsprincipaux">b. Concepts principaux</h4>
+<ul>
+  <li>
+    <p><strong>Stores</strong> : Au lieu de modules, Pinia utilise des "stores". Chaque store est un état isolé avec ses
+      propres actions, mutations et getters.</p>
+  </li>
+  <li>
+    <p><strong>State</strong> : Tout comme dans Vuex, le <code>state</code> est l'objet de données de votre store.</p>
+  </li>
+  <li>
+    <p><strong>Actions</strong> : Les actions sont des fonctions qui peuvent effectuer des opérations asynchrones et
+      muter l'état.</p>
+  </li>
+  <li>
+    <p><strong>Getters</strong> : Les getters sont des fonctions qui reçoivent l'état et retournent des données
+      dérivées.</p>
+  </li>
+</ul>
+<h4 id="ccommentdmarreravecpinia">c. Comment démarrer avec Pinia</h4>
+<ol>
+  <li><strong>Installation</strong> :</li>
+</ol>
+<pre><code class="bash language-bash">   npm install pinia
+</code></pre>
+<ol start="2">
+  <li><strong>Création d'un store</strong> :</li>
+</ol>
+<pre><code class="javascript language-javascript">import { defineStore } from 'pinia';
+
+export const useMyStore = defineStore({
+  id: 'myStore',
+  state: () =&gt; ({
+    count: 0
+  }),
+  getters: {
+    double: (state) =&gt; state.count * 2
+  },
+  actions: {
+    increment() {
+      this.count++;
+    }
+  }
+});
+</code></pre>
+<ol start="3">
+  <li><strong>Utilisation dans un composant</strong> :</li>
+</ol>
+<pre><code class="javascript language-javascript">import { useMyStore } from '@/stores/myStore';
+
+export default {
+  setup() {
+    const myStore = useMyStore();
+
+    return {
+      ...myStore
+    };
+  }
+}
+</code></pre>
+<h4 id="dintgrationavecvue3">d. Intégration avec Vue 3</h4>
+<p>L'intégration de Pinia avec Vue 3 est fluide. Vous initialisez simplement Pinia et fournissez le store à votre
+  application Vue lors de sa création.</p>
+<h4 id="eavantagesparrapportvuex">e. Avantages par rapport à Vuex</h4>
+<ul>
+  <li>
+    <p><strong>Moins de boilerplate</strong> : Pinia nécessite moins de code répétitif que Vuex pour accomplir les mêmes
+      tâches.</p>
+  </li>
+  <li>
+    <p><strong>Meilleure intégration avec la Composition API</strong> : Pinia s'intègre naturellement avec la
+      Composition API, rendant le code plus lisible et organisé.</p>
+  </li>
+  <li>
+    <p><strong>Débogage amélioré</strong> : Pinia offre des outils de débogage améliorés, facilitant le suivi des
+      mutations d'état et des actions.</p>
+  </li>
+</ul>
+<p>En conclusion, Pinia est une excellente option pour la gestion d'état dans les applications Vue 3, offrant une
+  expérience simplifiée et améliorée par rapport à Vuex, tout en conservant la puissance et la flexibilité nécessaires
+  pour gérer l'état complexe.
+</p>

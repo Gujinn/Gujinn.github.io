@@ -1,0 +1,27 @@
+<p>Les <strong>observateurs</strong> écoutent les changements sur les propriétés réactives et exécutent une fonction
+  en réponse. Ils sont définis dans l'option <code>watch</code>.</p>
+<p><strong>Exemple</strong>:</p>
+<pre><code class="javascript language-javascript">watch: {
+  firstName: function(newValue, oldValue) {
+    console.log('firstName changed from ' + oldValue + ' to ' + newValue);
+  }
+}
+</code></pre>
+<p><strong>Quand les utiliser</strong>:</p>
+<ul>
+  <li>
+    <p>Lorsque vous voulez exécuter une action en réponse à un changement de données, mais que cette action ne produit
+      pas une nouvelle valeur (contrairement aux propriétés calculées).</p>
+  </li>
+  <li>
+    <p>Pour des effets secondaires, comme la récupération de données depuis une API lorsque certaines données
+      changent.</p>
+  </li>
+  <li>
+    <p>Lorsque vous avez besoin de réagir à des changements sur plusieurs propriétés réactives.</p>
+  </li>
+  <li>
+    <p><strong>Observateurs</strong>: Utilisez-les pour des effets secondaires et pour réagir à des changements de
+      données.</p>
+  </li>
+</ul>

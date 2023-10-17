@@ -1,0 +1,81 @@
+<p>Tester votre application est crucial pour garantir sa fiabilité et sa robustesse. Vue3, avec l'écosystème Vue,
+  fournit des outils pour faciliter le test de vos composants et de votre application.</p>
+<h4 id="avuetestutils">a. Vue Test Utils</h4>
+<ul>
+  <li><strong>Vue Test Utils</strong> est la bibliothèque officielle pour tester les composants Vue.</li>
+  <li>Elle fournit des méthodes pour monter un composant, interagir avec lui, et vérifier son comportement.</li>
+</ul>
+<h4 id="binstallationetconfiguration">b. Installation et configuration</h4>
+<p>Pour commencer avec Vue Test Utils et Jest (un cadre de test populaire), installez les dépendances nécessaires:</p>
+<pre><code class="bash language-bash">npm install --save-dev @vue/test-utils jest @vue/vue3-jest
+</code></pre>
+<h4 id="ccrireuntestdebase">c. Écrire un test de base</h4>
+<p>Supposons que vous ayez un composant simple <code>Greeting.vue</code>:</p>
+<pre><code class="vue language-vue">&lt;template&gt;
+  &lt;div&gt;{{ greeting }}&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      greeting: 'Hello, Vue!'
+    };
+  }
+}
+&lt;/script&gt;
+</code></pre>
+<p>Un test pour ce composant pourrait ressembler à ceci:</p>
+<pre><code class="javascript language-javascript">import { mount } from '@vue/test-utils';
+import Greeting from '@/components/Greeting.vue';
+
+describe('Greeting.vue', () =&gt; {
+  it('renders a greeting', () =&gt; {
+    const wrapper = mount(Greeting);
+    expect(wrapper.text()).toMatch('Hello, Vue!');
+  });
+});
+</code></pre>
+<h4 id="dsimulerdesinteractionsutilisateur">d. Simuler des interactions utilisateur</h4>
+<p>Avec Vue Test Utils, vous pouvez simuler des interactions utilisateur comme des clics ou des entrées de formulaire.
+</p>
+<p><strong>Exemple</strong>:
+  Si vous avez un bouton dans votre composant qui, lorsqu'il est cliqué, change le message de salutation:</p>
+<pre><code class="vue language-vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;button @click="changeGreeting"&gt;Click me&lt;/button&gt;
+    &lt;div&gt;{{ greeting }}&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      greeting: 'Hello, Vue!'
+    };
+  },
+  methods: {
+    changeGreeting() {
+      this.greeting = 'Hello, World!';
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre>
+<p>Le test pourrait ressembler à ceci:</p>
+<pre><code class="javascript language-javascript">import { mount } from '@vue/test-utils';
+import Greeting from '@/components/Greeting.vue';
+
+describe('Greeting.vue', () =&gt; {
+  it('changes greeting on button click', async () =&gt; {
+    const wrapper = mount(Greeting);
+    await wrapper.find('button').trigger('click');
+    expect(wrapper.text()).toMatch('Hello, World!');
+  });
+});
+</code></pre>
+<h4 id="etesteravecvuexetvuerouter">e. Tester avec Vuex et Vue Router</h4>
+<p>Vue Test Utils offre également des moyens d'intégrer des tests avec Vuex (pour la gestion de l'état) et Vue Router
+  (pour la navigation).
+</p>

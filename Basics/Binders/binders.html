@@ -1,0 +1,82 @@
+<p>Dans le contexte de Vue.js, le terme "binder" n'est pas couramment utilisé. Cependant, si vous faites référence aux
+    "directives de liaison", alors nous parlons des mécanismes qui permettent de lier des données à des éléments du DOM,
+    comme <code>v-bind</code> et <code>v-model</code>. Ces directives sont essentielles pour rendre les applications Vue
+    réactives et dynamiques.</p>
+<h4 id="avbind">a. <code>v-bind</code></h4>
+<ul>
+    <li><strong>Utilisation de base</strong> : <code>v-bind</code> est utilisé pour lier une attribut à une expression.
+        Par exemple, pour lier l'attribut <code>href</code> d'une balise <code>&lt;a&gt;</code> à une variable
+        <code>url</code> :
+    </li>
+</ul>
+<pre><code class="html language-html">  &lt;a v-bind:href="url"&gt;Lien&lt;/a&gt;
+</code></pre>
+<ul>
+    <li><strong>Raccourci</strong> : Vous pouvez omettre <code>v-bind</code> et utiliser seulement <code>:</code> :</li>
+</ul>
+<pre><code class="html language-html">  &lt;a :href="url"&gt;Lien&lt;/a&gt;
+</code></pre>
+<ul>
+    <li><strong>Lier plusieurs attributs</strong> : Avec <code>v-bind</code>, vous pouvez lier plusieurs attributs en
+        même temps en utilisant un objet :</li>
+</ul>
+<pre><code class="html language-html">  &lt;div v-bind="{ id: someId, title: someTitle }"&gt;&lt;/div&gt;
+</code></pre>
+<h4 id="bvmodel">b. <code>v-model</code></h4>
+<ul>
+    <li><strong>Utilisation de base</strong> : <code>v-model</code> est une directive qui crée une liaison
+        bidirectionnelle sur un élément <code>input</code>, <code>textarea</code> ou <code>select</code>. Si l'input
+        change, la valeur de la variable sera mise à jour, et si la variable change, l'input sera mis à jour :</li>
+</ul>
+<pre><code class="html language-html">  &lt;input v-model="message"&gt;
+</code></pre>
+<ul>
+    <li>
+        <p><strong>Modificateurs</strong> : <code>v-model</code> possède des modificateurs pour effectuer certaines
+            tâches :</p>
+    </li>
+    <li>
+        <p><code>.lazy</code> : Écoute l'événement <code>change</code> au lieu de <code>input</code>.</p>
+    </li>
+    <li>
+        <p><code>.number</code> : Convertit l'input en nombre.</p>
+    </li>
+    <li>
+        <p><code>.trim</code> : Supprime les espaces avant et après l'input.</p>
+    </li>
+    <li>
+        <p><strong>Utilisation avec les composants</strong> : <code>v-model</code> peut également être utilisé avec des
+            composants, mais cela nécessite une configuration supplémentaire dans le composant lui-même.</p>
+    </li>
+</ul>
+<h4 id="cautresdirectivesdeliaison">c. Autres directives de liaison</h4>
+<ul>
+    <li><strong><code>v-on</code></strong> : Utilisé pour écouter les événements DOM et exécuter du code lorsqu'ils sont
+        déclenchés. Par exemple :</li>
+</ul>
+<pre><code class="html language-html">  &lt;button v-on:click="doSomething"&gt;Cliquez-moi&lt;/button&gt;
+</code></pre>
+<ul>
+    <li><strong>Raccourci pour <code>v-on</code></strong> : Vous pouvez utiliser <code>@</code> à la place de
+        <code>v-on:</code> :
+    </li>
+</ul>
+<pre><code class="html language-html">  &lt;button @click="doSomething"&gt;Cliquez-moi&lt;/button&gt;
+</code></pre>
+<h4 id="dractivitetdirectivesdeliaison">d. Réactivité et directives de liaison</h4>
+<p>L'un des principaux avantages des directives de liaison dans Vue est qu'elles sont réactives. Cela signifie que
+    lorsque les données de votre composant changent, le DOM est automatiquement mis à jour pour refléter ces
+    changements, et vice versa.</p>
+<h4 id="econseilsetmeilleurespratiques">e. Conseils et meilleures pratiques</h4>
+<ul>
+    <li>
+        <p><strong>Utilisez des expressions simples</strong> : Essayez de garder les expressions dans les directives de
+            liaison aussi simples que possible. Si une expression devient trop complexe, envisagez de la déplacer dans
+            une méthode ou une propriété calculée.</p>
+    </li>
+    <li>
+        <p><strong>Préférez <code>v-model</code> pour les formulaires</strong> : Lorsque vous travaillez avec des
+            formulaires, <code>v-model</code> est souvent la meilleure option car il gère automatiquement la liaison
+            bidirectionnelle des données.</p>
+    </li>
+</ul>

@@ -1,0 +1,61 @@
+<p>La Composition API est une nouvelle fonctionnalité introduite dans Vue3 qui offre une alternative à l'API basée sur
+  les options pour organiser la logique des composants.</p>
+<h4 id="aintroductionlacompositionapi">a. Introduction à la Composition API</h4>
+<ul>
+  <li>La Composition API est conçue pour gérer la logique des composants de manière plus flexible, en particulier pour
+    les composants plus complexes.</li>
+  <li>Elle utilise des fonctions et des valeurs réactives pour créer et gérer l'état et la logique du composant.</li>
+</ul>
+<h4 id="brefetreactive">b. <code>ref</code> et <code>reactive</code></h4>
+<ul>
+  <li><code>ref</code> est utilisé pour créer une valeur réactive.</li>
+  <li><code>reactive</code> est utilisé pour créer un objet réactif.</li>
+</ul>
+<p><strong>Exemple</strong>:</p>
+<pre><code class="javascript language-javascript">import { ref, reactive } from 'vue';
+
+const count = ref(0);
+const state = reactive({
+  firstName: 'John',
+  lastName: 'Doe'
+});
+</code></pre>
+<h4 id="ccomputedetwatch">c. <code>computed</code> et <code>watch</code></h4>
+<ul>
+  <li><code>computed</code> est utilisé pour créer des propriétés calculées.</li>
+  <li><code>watch</code> est utilisé pour réagir aux changements de valeurs réactives ou de propriétés calculées.</li>
+</ul>
+<p><strong>Exemple</strong>:</p>
+<pre><code class="javascript language-javascript">import { ref, computed, watch } from 'vue';
+
+const count = ref(0);
+const doubled = computed(() =&gt; count.value * 2);
+
+watch(count, (newValue, oldValue) =&gt; {
+  console.log(`Count changed from ${oldValue} to ${newValue}`);
+});
+</code></pre>
+<h4 id="dlamthodesetup">d. La méthode <code>setup</code></h4>
+<ul>
+  <li>La méthode <code>setup</code> est le point d'entrée pour utiliser la Composition API dans un composant.</li>
+  <li>Elle est exécutée avant que le composant ne soit créé et est le lieu où vous définissez l'état réactif, les
+    fonctions et la logique du composant.</li>
+</ul>
+<p><strong>Exemple</strong>:</p>
+<pre><code class="javascript language-javascript">import { ref } from 'vue';
+
+export default {
+  setup() {
+    const count = ref(0);
+
+    function increment() {
+      count.value++;
+    }
+
+    return {
+      count,
+      increment
+    };
+  }
+};
+</code></pre>

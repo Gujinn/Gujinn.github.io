@@ -1,0 +1,47 @@
+<p>Les directives sont des préfixes spéciaux qui indiquent à la bibliothèque Vue de faire quelque chose à l'élément DOM.
+  Voici quelques-unes des directives les plus couramment utilisées dans Vue3:</p>
+<h4 id="avifvelseifvelse">a. <code>v-if</code>, <code>v-else-if</code>, <code>v-else</code></h4>
+<ul>
+  <li>Ces directives sont utilisées pour conditionnellement rendre des éléments.</li>
+  <li>Si l'expression de <code>v-if</code> est évaluée comme vraie, l'élément est rendu.</li>
+</ul>
+<p><strong>Exemple</strong>:</p>
+<pre><code class="html language-html">&lt;p v-if="seen"&gt;Maintenant vous me voyez&lt;/p&gt;
+</code></pre>
+<h4 id="bbouclesvfor">b. Boucles <code>v-for</code></h4>
+<ul>
+  <li>La directive <code>v-for</code> est utilisée pour rendre une liste d'éléments en les liant à un tableau.</li>
+</ul>
+<p><strong>Exemple</strong>:</p>
+<pre><code class="html language-html">&lt;ul&gt;
+  &lt;li v-for="item in items"&gt;{{ item.text }}&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<h4 id="cvbind">c. <code>v-bind</code></h4>
+<ul>
+  <li>La directive <code>v-bind</code> est utilisée pour lier un attribut à une expression.</li>
+  <li>Par exemple, pour lier l'attribut <code>href</code> d'un lien à une variable <code>url</code>.</li>
+</ul>
+<p><strong>Exemple</strong>:</p>
+<pre><code class="html language-html">&lt;a v-bind:href="url"&gt;Lien&lt;/a&gt;
+</code></pre>
+<h4 id="dvon">d. <code>v-on</code></h4>
+<ul>
+  <li>La directive <code>v-on</code> est utilisée pour écouter les événements DOM et exécuter du code lorsqu'ils sont
+    déclenchés.</li>
+  <li>Par exemple, pour écouter un événement de clic sur un bouton.</li>
+</ul>
+<p><strong>Exemple</strong>:</p>
+<pre><code class="html language-html">&lt;button v-on:click="doSomething"&gt;Cliquez-moi&lt;/button&gt;
+</code></pre>
+<h4 id="evmodel">e. <code>v-model</code></h4>
+<ul>
+  <li>La directive <code>v-model</code> crée une liaison sur un élément <code>input</code>, <code>textarea</code> ou
+    <code>select</code>.
+  </li>
+  <li>Si vous utilisez <code>v-model</code> sur un <code>input</code>, par exemple, la valeur de cet input sera liée à
+    la variable que vous avez spécifiée.</li>
+</ul>
+<p><strong>Exemple</strong>:</p>
+<pre><code class="html language-html">&lt;input v-model="message"&gt;
+</code></pre>

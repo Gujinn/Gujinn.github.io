@@ -1,0 +1,63 @@
+<p>Vue3 a introduit plusieurs nouvelles fonctionnalités et améliorations par rapport à Vue2. Voici quelques-unes des
+  fonctionnalités avancées de Vue3:</p>
+<h4 id="ateleport">a. Teleport</h4>
+<ul>
+  <li><code>Teleport</code> permet de déplacer un élément du DOM vers un autre endroit du document, tout en le
+    gardant
+    sous le contrôle du composant Vue d'origine.</li>
+  <li>C'est utile pour les modales, les notifications et d'autres éléments qui doivent être placés en dehors de la
+    hiérarchie DOM normale.</li>
+</ul>
+<p><strong>Exemple</strong>:</p>
+<pre><code class="html language-html">&lt;teleport to="#end-of-body"&gt;
+  &lt;div class="modal"&gt;Ceci est une modale&lt;/div&gt;
+&lt;/teleport&gt;
+</code></pre>
+<h4 id="bsuspense">b. Suspense</h4>
+<ul>
+  <li><code>Suspense</code> est une fonctionnalité qui permet d'afficher un contenu de repli pendant que des
+    composants
+    asynchrones sont en cours de résolution.</li>
+  <li>Il est souvent utilisé avec la fonction <code>defineAsyncComponent</code> pour charger des composants de
+    manière
+    paresseuse.</li>
+</ul>
+<p><strong>Exemple</strong>:</p>
+<pre><code class="html language-html">&lt;Suspense&gt;
+  &lt;template #default&gt;
+    &lt;AsyncComponent /&gt;
+  &lt;/template&gt;
+  &lt;template #fallback&gt;
+    &lt;div&gt;Chargement...&lt;/div&gt;
+  &lt;/template&gt;
+&lt;/Suspense&gt;
+</code></pre>
+<h4 id="ccompositionapircapitulatif">c. Composition API (Récapitulatif)</h4>
+<ul>
+  <li>Bien que nous ayons déjà abordé la Composition API, il est important de noter qu'elle est l'une des
+    principales
+    fonctionnalités avancées de Vue3.</li>
+  <li>Elle offre une nouvelle façon d'organiser et de gérer la logique des composants, en particulier pour les
+    composants plus complexes.</li>
+</ul>
+<h4 id="dplusieursvmodels">d. Plusieurs v-models</h4>
+<ul>
+  <li>Dans Vue3, un composant peut supporter plusieurs <code>v-models</code>, ce qui est utile pour les composants
+    qui
+    gèrent plusieurs valeurs.</li>
+</ul>
+<p><strong>Exemple</strong>:</p>
+<pre><code class="html language-html">&lt;custom-input v-model:title="title" v-model:content="content"&gt;&lt;/custom-input&gt;
+</code></pre>
+<h4 id="eapiderenduavance">e. API de rendu avancée</h4>
+<ul>
+  <li>Vue3 offre une API de rendu plus flexible, permettant aux développeurs de créer des rendus personnalisés et
+    des
+    optimisations de performance.</li>
+</ul>
+<h4 id="famliorationsdeperformance">f. Améliorations de performance</h4>
+<ul>
+  <li>Vue3 a apporté de nombreuses améliorations de performance, notamment grâce à son nouveau moteur de réactivité
+    basé
+    sur les proxies ES6 et à l'optimisation du rendu.</li>
+</ul>
