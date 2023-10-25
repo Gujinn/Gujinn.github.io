@@ -141,6 +141,7 @@ hr {
 .index-container {
     display: flex;
     height: 100vh;
+    overflow: hidden;
 }
 
 nav {
@@ -148,11 +149,17 @@ nav {
     background-color: #ffffff;
     padding: 20px;
     border-right: 1px solid #bdc3c7;
-    overflow-y: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow-y: hidden;
 }
 
 nav ul {
     list-style-type: none;
+    flex: 1;
+    margin-bottom: 0;
 }
 
 nav li {
